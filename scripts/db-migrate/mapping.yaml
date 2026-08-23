@@ -1,0 +1,23 @@
+# Migration configuration
+# Define table mappings between source and target databases
+
+migrations:
+  - name: users_migration
+    source_table: users
+    target_table: users_v2
+    field_mapping:
+      id: id
+      name: full_name          # renamed
+      email: email
+      created_at: created_at
+      # Fields not mapped are skipped
+
+  - name: orders_migration
+    source_table: orders
+    target_table: orders_archive
+    field_mapping:
+      id: order_id
+      user_id: customer_id
+      total: amount
+      status: status
+      created_at: created_at

@@ -1,0 +1,5 @@
+[project]
+name = "tools"
+version = "0.1.0"
+description = "Utility scripts for data extraction, migration, and repo analysis"
+requires-python = ">=3.11"

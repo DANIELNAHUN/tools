@@ -1,0 +1,27 @@
+# Environment variables
+.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+
+# uv
+uv.lock
+
+# Output files
+output/*.csv
+output/*.xlsx
+output/*.zip
+output/*.md
+!output/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# Agent config
+.atl/

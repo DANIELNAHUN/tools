@@ -1,0 +1,24 @@
+# Extraction configuration
+# Define tables, fields, and output format
+
+extractions:
+  - name: users_export
+    table: users
+    fields:
+      - id
+      - name
+      - email
+      - created_at
+    output_format: csv           # csv | xlsx
+    output_file: output/users.csv
+
+  - name: orders_report
+    table: orders
+    fields:
+      - id
+      - user_id
+      - total
+      - status
+      - created_at
+    output_format: xlsx
+    output_file: output/orders_report.xlsx

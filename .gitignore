@@ -12,12 +12,12 @@ dist/
 # uv
 uv.lock
 
-# Output files
-output/*.csv
-output/*.xlsx
-output/*.zip
-output/*.md
-!output/.gitkeep
+# Output files (recursive — any output/ subfolder)
+**/output/*.csv
+**/output/*.xlsx
+**/output/*.zip
+**/output/*.md
+!**/output/.gitkeep
 
 # IDE
 .vscode/

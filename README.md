@@ -35,7 +35,7 @@ tools/
 ## Inicio rápido
 
 ```bash
-# Instalar uv (si no lo tenés)
+# Instalar uv (si no lo tienes)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Ir al script que necesitás e instalar dependencias

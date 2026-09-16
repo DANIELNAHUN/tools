@@ -1,10 +1,14 @@
 """Analyze git repositories for status, changes, and .env backups.
 
 Usage:
-    uv run analyze.py                              # analyze all repos in current dir
+    uv run analyze.py                              # analyze all repos in REPOS_PATH env or current dir
     uv run analyze.py --path /path/to/repos        # specific directory
     uv run analyze.py --repos repo1,repo2          # filter specific repos
     uv run analyze.py --path /repos --repos repo1  # combine both
+
+Environment variables:
+    REPOS_PATH  - Default path to repos directory (overridden by --path)
+    OUTPUT_DIR  - Output directory for reports and backups (default: output)
 """
 
 import argparse
@@ -186,8 +190,8 @@ def main():
     )
     parser.add_argument(
         "--path",
-        default=".",
-        help="Directory containing git repositories (default: current dir)",
+        default=os.getenv("REPOS_PATH", "."),
+        help="Directory containing git repositories (default: REPOS_PATH env var or current dir)",
     )
     parser.add_argument(
         "--repos",

@@ -8,7 +8,10 @@ Script para analizar repositorios Git en un directorio: estado, cambios locales 
 # Analizar todos los repos en el directorio actual
 uv run analyze.py
 
-# Directorio específico
+# Usar path predefinido desde .env (REPOS_PATH)
+uv run analyze.py
+
+# Directorio específico (override de REPOS_PATH)
 uv run analyze.py --path /home/user/projects
 
 # Filtrar repos específicos
@@ -38,12 +41,13 @@ uv run analyze.py --days 60
 | Variable | Descripción | Default |
 |---|---|---|
 | `GITHUB_TOKEN` | Token para API GitHub (opcional) | - |
+| `REPOS_PATH` | Path por defecto a la carpeta de repos | Directorio actual |
 | `OUTPUT_DIR` | Directorio de salida | output |
 
 ## Argumentos CLI
 
 | Argumento | Default | Descripción |
 |---|---|---|
-| `--path` | Directorio actual | Directorio con repos |
+| `--path` | `REPOS_PATH` o directorio actual | Directorio con repos |
 | `--repos` | Todos | Filtrar por nombres (comma-separated) |
 | `--days` | 30 | Días para considerar "activo" |
